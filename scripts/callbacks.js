@@ -1,39 +1,41 @@
 window.onload = function(){
-    let entryCounter = 0;   
-    let optionsCounter = 0;
-    let addEntry = document.getElementById("addEntry")
+    const maximumNumberOfEntries = 5;
+    const maximumNumberOfoptions = 4;
+    
+    let entryCounter = -1;   
+    let optionsCounter = -1;
+    let maximumNumberOfOptionsEnteredSoFar = 0;
 
-    addEntry.onclick = function(){        
+    const wrapper = document.getElementById("wrapper") 
+    const addEntry = document.getElementById("addEntry")
+    const addOption = document.getElementById("addOption")
+
+    addEntry.onclick = function(){      
+        ++entryCounter  
+        optionsCounter = -1
         addNewEntry()
+        addOption.disabled = false; 
+    }
+
+    addOption.onclick = function(){   
+        ++optionsCounter     
+        addNewOption()
     }
 
     function addNewEntry(){
         let newEntry = document.createElement("input")
-        let newEntryId = "newEntry" + entryCounter;
-        newEntry.id = newEntryId;
-        addEntry.after(newEntry);
-        newEntry = document.getElementById(newEntryId)
-        ++entryCounter
-        optionsCounter = 0
-        addNewOption(newEntry)
+        newEntry.id = "entry-" + entryCounter;
+        wrapper.appendChild(newEntry)
     }
     
-    function addNewOption(newEntry){
+    function addNewOption(){
         let newOption = document.createElement("input")
-        let newOptionId = "newOption" + optionsCounter;
-        newOption.id = newOptionId;
-        newEntry.after(newOption);
-        newOption = document.getElementById(newOptionId)
+        newOption.id = "option-" + entryCounter + "-" + optionsCounter;
+        wrapper.appendChild(newOption)
     
         let isCorrectAnswer = document.createElement("input")
+        isCorrectAnswer.id = "isCorrectAnswer-" + entryCounter + "-" + optionsCounter;
         isCorrectAnswer.type = "checkbox";
-        let isCorrectAnswerId = "isCorrectAnswer" + optionsCounter;
-        isCorrectAnswer.id = isCorrectAnswerId;
-        newOption.after(isCorrectAnswer);
-        isCorrectAnswer = document.getElementById(isCorrectAnswerId)
-    
-        ++optionsCounter
-    }
-    
-    
+        wrapper.appendChild(isCorrectAnswer)
+    } 
 }
