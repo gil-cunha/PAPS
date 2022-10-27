@@ -6,20 +6,34 @@ window.onload = function(){
     let optionsCounter = -1;
     let maximumNumberOfOptionsEnteredSoFar = 0;
 
+    const activityForm = document.getElementById("activityForm")
     const wrapper = document.getElementById("wrapper") 
     const addEntry = document.getElementById("addEntry")
     const addOption = document.getElementById("addOption")
 
-    addEntry.onclick = function(){      
+    addEntry.onclick = () => {      
         ++entryCounter  
-        optionsCounter = -1
         addNewEntry()
+        optionsCounter = -1
         addOption.disabled = false; 
     }
 
-    addOption.onclick = function(){   
+    addOption.onclick = () => {   
         ++optionsCounter     
         addNewOption()
+    }
+
+    activityForm.onsubmit = () => {
+        let entriesValues = []
+        let optionsValues = []
+
+        entriesValues.push(document.getElementById("entry-0").value)
+        entriesValues.push(document.getElementById("entry-1").value)
+
+        document.getElementById("entriesValues").value = entriesValues;
+        //console.log(document.getElementById("entriesValues"));
+
+
     }
 
     function addNewEntry(){
