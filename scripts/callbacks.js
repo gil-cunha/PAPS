@@ -2,9 +2,9 @@ window.onload = function(){
     const maximumNumberOfEntries = 5;
     const maximumNumberOfoptions = 4;
     
-    let entryCounter = -1;   
-    let optionsCounter = -1;
-    let maximumNumberOfOptionsEnteredSoFar = 0;
+    let entryCounter = -1; // número de entradas inseridas   
+    let optionsCounter = -1; // número de opções inseridas na entrada atual
+    let maxOptionsCounter = 0; // número máximo de opções inseridas para uma entrada
 
     const activityForm = document.getElementById("activityForm")
     const wrapper = document.getElementById("wrapper") 
@@ -31,9 +31,6 @@ window.onload = function(){
         entriesValues.push(document.getElementById("entry-1").value)
 
         document.getElementById("entriesValues").value = entriesValues;
-        //console.log(document.getElementById("entriesValues"));
-
-
     }
 
     function addNewEntry(){
