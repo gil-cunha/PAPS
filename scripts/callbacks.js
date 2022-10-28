@@ -1,5 +1,6 @@
 window.onload = function(){
-    const maxNumberOfEntries = 5;
+    const minNumberOfEntries = 1;
+    const maxNumberOfEntries = 10;
     const minNumberOfoptions = 2;
     const maxNumberOfoptions = 4;
     
