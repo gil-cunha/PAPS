@@ -1,6 +1,7 @@
 window.onload = function(){
-    const maximumNumberOfEntries = 5;
-    const maximumNumberOfoptions = 4;
+    const maxNumberOfEntries = 5;
+    const minNumberOfoptions = 2;
+    const maxNumberOfoptions = 4;
     
     let entryCounter = -1; // número de entradas inseridas   
     let optionsCounter = -1; // número de opções inseridas na entrada atual
