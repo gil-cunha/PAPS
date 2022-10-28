@@ -30,7 +30,7 @@ window.onload = function(){
         entriesValues.push(document.getElementById("entry-0").value)
         entriesValues.push(document.getElementById("entry-1").value)
 
-        document.getElementById("entriesValues").value = entriesValues;
+        document.getElementById("entries").value = entriesValues;
     }
 
     function addNewEntry(){
@@ -46,7 +46,7 @@ window.onload = function(){
     
         let isCorrectAnswer = document.createElement("input")
         isCorrectAnswer.id = "isCorrectAnswer-" + entryCounter + "-" + optionsCounter;
-        isCorrectAnswer.type = "radio";
+        isCorrectAnswer.type = "checkbox";
         wrapper.appendChild(isCorrectAnswer)
     } 
 }
