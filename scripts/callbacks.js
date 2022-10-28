@@ -46,7 +46,7 @@ window.onload = function(){
     
         let isCorrectAnswer = document.createElement("input")
         isCorrectAnswer.id = "isCorrectAnswer-" + entryCounter + "-" + optionsCounter;
-        isCorrectAnswer.type = "checkbox";
+        isCorrectAnswer.type = "radio";
         wrapper.appendChild(isCorrectAnswer)
     } 
 }
